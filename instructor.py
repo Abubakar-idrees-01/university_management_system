@@ -323,32 +323,3 @@ class Instructor(Person):
             print(f"❌ Error updating grade: {e}")
 
 
-    # def check_student_courses(self, student_name):
-    #     try:
-    #         student_table = f"{student_name}_courses"
-
-    #         # Check if the student's course table exists
-    #         cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name=?", (student_table,))
-    #         if not cursor.fetchone():
-    #             print(f"⚠️ Student '{student_name}' does not exist or has no enrolled courses.")
-    #             return
-
-    #         # Fetch and display all course records for the student
-    #         cursor.execute(f"SELECT * FROM \"{student_table}\"")
-    #         courses = cursor.fetchall()
-
-    #         if not courses:
-    #             print(f"⚠️ No courses found for '{student_name}'.")
-    #             return
-
-    #         # Get column names dynamically
-    #         cursor.execute(f"PRAGMA table_info(\"{student_table}\")")
-    #         columns = [col[1] for col in cursor.fetchall()]
-    #         print(" | ".join(columns))
-
-    #         # Print course data
-    #         for row in courses:
-    #             print(" | ".join(str(value) for value in row))
-
-    #     except sqlite3.Error as e:
-    #         print(f"❌ Error retrieving courses: {e}")
